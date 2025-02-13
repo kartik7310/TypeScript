@@ -65,3 +65,12 @@ const cartItems: CartItem[] = [
 ];
 
 console.log(calculateTotal(cartItems)); 
+
+function printNumber(num1:number,num2:number,cb:(num3:Number)=>void){
+   const result = num1+num2;
+   cb(result)
+}
+printNumber(2,5,(result)=>{
+  console.log(result);
+  
+})
