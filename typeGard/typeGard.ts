@@ -1,10 +1,17 @@
-type Numeric = number |boolean
-type combine = number|string
-function add(a:Numeric,b:combine){
-  if(typeof a==='string'||typeof b==='string'){
-    return a.toString()+b.toString()
-  } return a + b
-}
-console.log(add("true","lathiyan"));
-console.log(2,5);
+type Numeric = number | boolean;
+type Combine = number | string;
 
+function add(a: Numeric, b: Combine): string | number {
+ 
+  if (typeof b === "string") {
+    return a.toString() + b.toString();
+  }
+  
+  
+  const numA = typeof a === "boolean" ? +a : a;
+  return numA + b;
+}
+
+
+console.log(add(true, "lathiyan")); 
+console.log(add(2, 5)); 
